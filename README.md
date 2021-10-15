@@ -39,4 +39,4 @@ pandoc_filters=[
 ]
 ```
 
-3.  Run `mdpaper`: `mdpaper docx` or `mdpaper pdf`
+3.  Run `md-paper`: `md-paper docx` or `md-paper pdf`
