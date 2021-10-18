@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mdpaper"
-version = "0.0.1"
+version = "0.0.2"
 description = "A package for organizing and compiling a thesis type document with markdown."
 authors = ["Thomas Tu <thomasthetu@gmail.com>"]
 
