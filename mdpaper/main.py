@@ -13,7 +13,6 @@ app = typer.Typer()
 
 basecmd = "pandoc"
 
-
 today = date.today()
     
 output_vars = {
