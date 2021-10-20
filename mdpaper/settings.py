@@ -11,8 +11,16 @@ _settings = Dynaconf(
     default_settings_paths=constants.DEFAULT_SETTINGS_FILES,
 )
 
+# TODO: Add typing
+
 # Get list of index names
 index = _settings.get("index", [])
+
+# Metadata file
+metadata = _settings.get("metadata")
+
+# Standalone mode
+standalone = _settings.get("standalone", True)
 
 # Reference file
 references = _settings.get("references", "references.bib")
@@ -37,3 +45,4 @@ if template_docx:
 
 # PDF Settings
 pdf_engine = _settings.get("pdf_engine", "xelatex")
+template_pdf = _settings.get("template_pdf", None)

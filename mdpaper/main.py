@@ -31,7 +31,11 @@ def callback():
 
 def _build_args(output, fmt):
     
-    args = [settings.pandoc, "-s"]
+    args = [settings.pandoc]
+    if settings.standalone:
+        args.append("-s")
+    if settings.metadata:
+        args.extend(["--metadata-file", settings.metadata])
     for pandoc_filter in settings.pandoc_filters:
         args.extend(["-F", pandoc_filter])
     if settings.toc:
@@ -95,6 +99,9 @@ def pdf(output: Optional[Path] = typer.Option(default=None, resolve_path=True)):
     
     args, output_name = _build_args(output, "pdf")
     
+    if settings.template_pdf:
+        args.extend(["--template", str(settings.template_pdf)])
+
     args.extend(["--pdf-engine", settings.pdf_engine])
 
     typer.echo(f"Writing file to {output_name}")
