@@ -31,7 +31,7 @@ def callback():
 
 def _build_args(output, fmt):
     
-    args = [settings.pandoc, "-s", "-F", "pandoc-crossref"]
+    args = [settings.pandoc, "-s"]
     for pandoc_filter in settings.pandoc_filters:
         args.extend(["-F", pandoc_filter])
     if settings.toc:

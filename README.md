@@ -1,14 +1,17 @@
 # Motivation
 
-When I went back to school for a secondary degree, I found that the state of document management and generation in academia was sorely lacking some key workflows I depended on in my day-to-day job as a developer.  I set out to create a package that would be suitable for writing long-form papers meant for distribution and consumption in an academic context, but had all the advantages of plain-text based systems (version control, simplicity, portability.)  Similarly, there were a suite of features commonly found in rich document editors that plain text had no defacto solution for - namely reference management and labeling.  The end goal of this package is to provide an easy to way to convert a collection of markdown files into a single document with support for bibliographies, labeling and multi-format outputs.  This is based primarily on the following tools:
+When I went back to school for a secondary degree, I found that the state of document management and generation in academia was sorely lacking some key workflows I depended on in my day-to-day job as a developer.  I set out to create a package that would be suitable for writing long-form papers meant for distribution and consumption in an academic context, but had all the advantages of plain-text based systems (version control, simplicity, portability.)  Similarly, there were a suite of features commonly found in rich document editors that plain text had no defacto solution for - namely reference management and labeling.  The end goal of this package is to provide an easy to way to convert a collection of markdown files into a single document with support for bibliographies, labeling and multi-format outputs.
+
+## Recommended Packages
 
 - pandoc
 - pandoc-crossref
 - citeproc
+- pantable
 
 ## Quickstart
 
-1. Install the `mdpaper` package: `pip install mdpaper` and ensure you have `pandoc-crossref` installed.
+1. Install the `mdpaper` package: `pip install mdpaper`.
 2. Configure your document by creating a `settings.toml` file in the root directory of your project.
 
 ```toml
@@ -35,7 +38,9 @@ toc_depth=3
 # \newpage and a custom \toc command
 # Using \toc from this package is incompatible with the `toc` flag.
 pandoc_filters=[
-    "pandoc-docxtras"
+    "pandoc-docxtras",
+    "pantable",
+    "pandoc-crossref",
 ]
 ```
 
