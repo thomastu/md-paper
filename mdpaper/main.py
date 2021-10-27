@@ -46,7 +46,7 @@ def _build_args(output, fmt):
     
     files_ = []
     for pattern in settings.index:
-        for fp_ in glob(pattern):
+        for fp_ in sorted(glob(pattern)):
             fp = Path(fp_)
             assert fp.is_file(), f"{fp_} does not exist"
             files_.append(str(fp.expanduser().resolve()))
